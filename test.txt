@@ -1,0 +1,365 @@
+Windows PowerShell
+��Ȩ���� (C) 2015 Microsoft Corporation����������Ȩ����
+
+C:\Users\home\Documents\GitHub> mkdir test
+
+
+    Ŀ¼: C:\Users\home\Documents\GitHub
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        2016/9/29      8:20                test
+
+
+C:\Users\home\Documents\GitHub> cd test
+C:\Users\home\Documents\GitHub\test> pwd
+
+Path
+----
+C:\Users\home\Documents\GitHub\test
+
+
+C:\Users\home\Documents\GitHub\test> git init
+Initialized empty Git repository in C:/Users/home/Documents/GitHub/test/.git/
+C:\Users\home\Documents\GitHub\test [master]> ls -ah
+
+
+    Ŀ¼: C:\Users\home\Documents\GitHub\test
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d--h--        2016/9/29      8:25                .git
+
+
+C:\Users\home\Documents\GitHub\test [master]> git add index.html
+C:\Users\home\Documents\GitHub\test [master +1 ~0 -0]> git commit -m "index"
+[master (root-commit) 3f1a878] index
+ 1 file changed, 229 insertions(+)
+ create mode 100644 index.html
+C:\Users\home\Documents\GitHub\test [master]> git status
+On branch master
+nothing to commit, working directory clean
+C:\Users\home\Documents\GitHub\test [master]> add test.txt
+add : �޷�����add����ʶ��Ϊ cmdlet���������ű��ļ�������г�������ơ��������Ƶ�ƴд���������·������ȷ��·����ȷ��
+Ȼ������һ�Ρ�
+����λ�� ��:1 �ַ�: 1
++ add test.txt
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (add:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+C:\Users\home\Documents\GitHub\test [master]> git add test.txt
+fatal: pathspec 'test.txt' did not match any files
+C:\Users\home\Documents\GitHub\test [master]> git add test.txt
+C:\Users\home\Documents\GitHub\test [master +1 ~0 -0]> git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   test.txt
+
+C:\Users\home\Documents\GitHub\test [master +1 ~0 -0]> git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   test.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+C:\Users\home\Documents\GitHub\test [master +1 ~0 -0 | +0 ~1 -0]> git diff
+diff --git a/test.txt b/test.txt
+index 19a0762..83f970b 100644
+--- a/test.txt
++++ b/test.txt
+@@ -1,2 +1,3 @@
+ here is the first line
+-here is the second line
+\ No newline at end of file
++here is the second line
++here is the third line
+\ No newline at end of file
+C:\Users\home\Documents\GitHub\test [master +1 ~0 -0 | +0 ~1 -0]> git add test.txt
+C:\Users\home\Documents\GitHub\test [master +1 ~0 -0]> git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   test.txt
+
+C:\Users\home\Documents\GitHub\test [master +1 ~0 -0]> git commit -m "add txt"
+[master d6b1e63] add txt
+ 1 file changed, 3 insertions(+)
+ create mode 100644 test.txt
+C:\Users\home\Documents\GitHub\test [master]> git status
+On branch master
+nothing to commit, working directory clean
+C:\Users\home\Documents\GitHub\test [master]> git log
+commit d6b1e63dd0f63e5af0cef90ed736a05ae095ae2a
+Author: zxxwin <1247930339@qq.com>
+Date:   Thu Sep 29 08:42:27 2016 +0800
+
+    add txt
+
+commit 3f1a878f1ed2d1efc64dce3cbafe458fa0cabda2
+Author: zxxwin <1247930339@qq.com>
+Date:   Thu Sep 29 08:31:30 2016 +0800
+
+    index
+C:\Users\home\Documents\GitHub\test [master]> git reset --hard HEAD^
+HEAD is now at 3f1a878 index
+C:\Users\home\Documents\GitHub\test [master]> cat index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>大学生资助网</title>
+        <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+             <!-- 以下是网页头部以及导航栏部分 -->
+<div class="head">
+        <img src="image/banner0.png" alt="wust">
+  <div class="wrap-head">
+          <div class="nav">
+                                  <ul>
+                                        <li class="homepage"><a href="#">首页</a></li>
+                                        <li class="li-intro"><a href="#">中心简�?/a></li>
+                                        <li><a href="#">奖助学金</a></li>
+                                        <li><a href="#">勤工俭学</a></li>
+                                        <li><a href="#">助学贷款</a></li>
+                                        <li><a href="#">绿色通道</a></li>
+                                        <li><a href="#">资料下载</a></li>
+                                        <li class="contact-us"><a href="#">联系我们</a></li>
+                                        <div style="clear:both;"></div>
+                                 </ul>
+          </div>
+ </div>
+</div>
+                     <!-- 以下是网页的主体部分 -->
+
+<div class="container">
+  <div class="wrap-main">
+       <div class="main-container">
+              <!-- 以下是网页主要内容的上半部分包括登录框和右侧图片 -->
+             <div class="login">
+                   <div class="loginbar">
+                        <p>登陆入口</p>
+                   </div>
+                   <div class="login-content">
+                   <img src="image/teacher0.png" alt="login">
+                        <a href="#">资助管理系统（教师入口）</a>
+                   </div>
+                   <div class="login-content">
+                   <img src="image/student0.png" alt="login">
+                        <a href="#">资助管理系统（学生入口）</a>
+                   </div>
+             </div>
+             <div class="main-up-right">
+                <img src="image/3.jpg" alt="春天来了">
+             </div>
+                <!-- 以下是网页主体内容的中部 分为3�?-->
+                            <!-- 左边第一�?-->
+           <div class="content-middle-border">
+                  <div class="title">
+                  <h2>工作动�?/h2>
+              <a href="#"> more >></a>
+              </div>
+                  <ul class="news">
+                      <li><a href="#">大学生资助中心新版上�?</a>
+                                   <time>16-04-20</time></li>
+                        <li><a href="#">大学生资助中心新版上�?/a>
+                            <time>16-04-20</time> </li>
+                        <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time> </li>
+                        <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                        <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                        <li><a href="#">abcdefghijklmno...</a>
+                             <time>16-04-20</time></li>
+                        <li><a href="#">1235657656888868...</a>
+                             <time>16-04-20</time></li>
+                        <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                            <time>16-04-20</time><br></li>
+              </ul>
+
+           </div>
+                       <!-- 中间第二�? -->
+
+           <div class="content-middle-border" style="margin-left:4px;">
+              <div class="title">
+                     <h2>资助政策</h2>
+                     <a href="#"> more >></a>
+              </div>
+                  <ul class="news">
+                  <li><a href="#">大学生资助中心新版上�?</a>
+                                   <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上�?/a>
+                            <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">abcdefghijklmno...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">1235657656888868...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                            <time>16-04-20</time><br></li>
+              </ul>
+           </div>
+                <!-- 中间内容右边第三�?-->
+           <div class="content-middle-border" style="margin-left:4px;">
+              <div class="title">
+                     <h2>办事指南</h2>
+                 <a href="#"> more >></a>
+
+              </div>
+                  <ul class="news">
+                  <li><a href="#">大学生资助中心新版上�?</a>
+                                   <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上�?/a>
+                            <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">abcdefghijklmno...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">1235657656888868...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                            <time>16-04-20</time><br></li>
+              </ul>
+           </div>
+                    <!-- 以下是网页主要内容的下半部分 -->
+                         <!-- 主要内容下部左边第一�?-->
+             <div class="content-middle-border">
+                  <div class="title">
+                  <h2>招聘信息</h2>
+              <a href="#"> more >></a>
+              </div>
+                 <ul class="news">
+                  <li><a href="#">大学生资助中心新版上�?</a>
+                                   <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上�?/a>
+                            <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">abcdefghijklmno...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">1235657656888868...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                            <time>16-04-20</time><br></li>
+              </ul>
+           </div>
+                       <!-- 主要内容下部中间第二�? -->
+
+           <div class="content-middle-border" style="margin-left:4px;">
+              <div class="title">
+                     <h2>资助风采</h2>
+                 <a href="#"> more >></a>
+              </div>
+                  <ul class="news">
+                  <li><a href="#">大学生资助中心新版上�?</a>
+                                   <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上�?/a>
+                            <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">abcdefghijklmno...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">1235657656888868...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                            <time>16-04-20</time><br></li>
+              </ul>
+           </div>
+                <!-- 主要内容下部右边第三�?-->
+           <div class="content-middle-border" style="margin-left:4px;">
+              <div class="title">
+                     <h2>互动交流</h2>
+                 <a href="#"> more >></a>
+              </div>
+                <ul class="news">
+                  <li><a href="#">大学生资助中心新版上�?</a>
+                                   <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上�?/a>
+                            <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time> </li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">abcdefghijklmno...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">1235657656888868...</a>
+                             <time>16-04-20</time></li>
+                <li><a href="#">大学生资助中心新版上线喜大普�?..</a>
+                            <time>16-04-20</time><br></li>
+              </ul>
+           </div>
+      </div>
+                <!-- 以下是网页的尾部说明 -->
+       <div class="foot">
+          <div class="foot-link">
+            <ul>
+                 <li>友情链接�?/li>
+                     <li><a href="#">国家教育�?/a></li>
+                 <li><a href="#">湖北省教育厅</a></li>
+                     <li><a href="#">武汉科技大学</a></li>
+                     <li><a href="#">武汉科技大学学生工作�?/a></li>
+                     <li><a href="#">湖北省高等学校教育教学公共平�?/a></li>
+                     <li><a href="#">湖北教育信息�?/a></li>
+                     <li><a href="#">湖北省教育资源服务平�?/a></li>
+            </ul>
+           <div class="copyright">
+                Copyright 2016 @ 武汉科技大学 版权所�?&nbsp;&nbsp;&nbsp;地址：武汉青山和平大�?47�? 邮编�?30081 鄂ICP�?30192&nbsp;
+                &nbsp;技术支持：阿豆工作�?
+           </div>
+          </div>
+       </div>
+  </div>
+</div>
+</body>
+</html>
+C:\Users\home\Documents\GitHub\test [master]> git log
+commit 3f1a878f1ed2d1efc64dce3cbafe458fa0cabda2
+Author: zxxwin <1247930339@qq.com>
+Date:   Thu Sep 29 08:31:30 2016 +0800
+
+    index
+C:\Users\home\Documents\GitHub\test [master]> git remote add origin git@github.com:zxxwin/test.git
+C:\Users\home\Documents\GitHub\test [master]> git push -u origin master
+Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 1.74 KiB | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:zxxwin/test.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+C:\Users\home\Documents\GitHub\test [master]>
+
