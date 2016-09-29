@@ -1,0 +1,110 @@
+*{
+	margin: 0 0;
+}
+body{
+	min-width: 1091px;
+}
+
+
+.header{
+	margin-top: 10px;
+	margin-left: 10%;
+}
+	.logo{}
+	.welc{
+		position: relative;
+		top: -25px;
+		left: 20px;
+		font-size: 24px;
+		color: #333;
+		font-family: 微软雅黑;
+	}
+.content{
+	height: 473px;
+	margin: 0 auto;
+	background: #f66610;
+	padding-left: 10%;
+}	
+	.banner{
+		float: left;
+		display: inline;
+	}
+	.login{
+		float: left;
+		background: #fff;
+		padding: 10px;
+		width:  300px;
+		height:  275px;
+		margin-top: 50px;
+		margin-left: 70px;
+	}	
+		.mt{
+			float: left;
+			height: 27px;
+			font-size: 24px;
+			color: #333;
+		}
+			.login a{
+				display: block;
+				text-decoration: none;
+				color: #b61d1d;
+				float: right;
+			}
+			.login a:hover{
+				text-decoration: underline;
+			}
+				.itxt {
+				border: 1px solid #ccc;
+				margin-top: 10px;
+			    line-height: 18px;
+			    height: 18px;
+			    padding: 10px;
+			    width: 280px;
+			    font-size: 14px;
+			}
+			.login>a{
+				margin-top: 8px;
+			}
+		.tip,.warm{
+			clear: both;
+			margin-top: 38px;
+			text-indent: 10px;
+			width: 300px;
+			height: 16px;
+			font-size: 12px;
+			line-height: 16px;
+		}
+		.tip{
+			color: #666;
+			background: #fff6d2;
+			border: 1px solid #ffe57d;			
+		}
+		.warm{
+			color: #e4393c;
+			background: #ffebeb;
+			border: 1px solid #e4393c;		
+		}
+		.save{
+			margin-top: 20px;
+			font-size: 12px;
+		}
+			.save>label{
+				color: #444;
+			}
+			.save>input{
+				vertical-align:middle;
+			}
+		.log-button{
+			cursor: pointer;
+			border: 0;
+			margin-top: 20px;
+			display: block;
+			width: 300px;
+			height: 35px;
+			background: #e4393c;
+			text-align: center;
+			color: #fff;
+			line-height: 35px;
+			font-size: 24px;
+			font-family: 微软雅黑;
+		}

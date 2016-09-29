@@ -1,0 +1,38 @@
+.calc{
+		display: none;
+		position: fixed;
+		right: 33px;
+		top:33%;
+		width: 414px;
+		padding: 0;
+		z-index: 10; 
+		}
+
+		.screen{
+			width: 405px;
+			height: 100px;
+			font-size: 50px;
+			line-height: 100px;
+		}
+		.buttons{
+			color: white;
+			cursor: pointer;
+		}
+		.buttons td{
+			padding: 0;
+			background: #da391c;
+			width: 80px;
+			height: 50px;
+			text-align: center;	
+			font-size: 35px;
+			border-radius: 5px;
+		}
+		.buttons td:hover{
+			opacity: 0.6;
+		}
+		#equal{
+			background: #F6C66E;		
+		}
+		#del{
+			background: #F5AF8B;
+		}
